@@ -247,6 +247,7 @@
             console.log('Navigating to ' + page);
         }
     </script>
+//yes
 
 </body>
 </html>
