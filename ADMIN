@@ -131,3 +131,43 @@
             transition: transform 0.3s ease-in-out;
         }
 
+        .btn:hover {
+            transform: scale(1.1);
+        }
+         footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
+            position: fixed;
+            bottom: 0;
+                   }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <B><h1 style="color: white;">SKYLINES - Admin Panel</h1></B>
+            <a href="#" class="navbutton">Home</a>
+            <a href="#" class="navbutton" onclick="navigate('about')">About Us</a>
+            <a href="#" class="navbutton" onclick="navigate('contact')">Contact Us</a>
+        </header>
+
+        <div class="side-panel">
+            <div class="card">
+                <img src="https://image.lexica.art/full_webp/0701c4e7-1b18-482b-8408-fdd06b5ddef4" alt="Flights Schedule">
+                <h2>Flights Schedule</h2>
+
+                <a href="flights-schedule.html" class="btn">Go to Schedule</a>
+            </div>
+
+            <div class="card">
+                <img src="https://image.lexica.art/full_webp/552c8ce8-f4d8-4a64-a281-3a637bce1656" alt="Flights Rate">
+                <h2>Flights Rate</h2>
+                
+                <a href="flights-rate.html" class="btn">Go to Rates</a>
+            </div>
+
