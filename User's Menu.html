@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Airline Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #3498db;
+            padding: 15px;
+            text-align: center;
+            width: 80%;
+            border-radius: 15px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbutton {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.7s;
+            text-decoration: none;
+        }
+
+        .navbutton:hover {
+            background-color: darkblue;
+        }
+
+        .navbutton:active {
+            background-color: #21618c;
+        }
+
+        .side-panel {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .card {
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <header>
+                <h1>SKYLINES - User Panel</h1>
+            </header>
+            <a href="#" class="navbutton">Home</a>
+            <a href="#" class="navbutton" onclick="navigate('about')">About Us</a>
+            <a href="#" class="navbutton" onclick="navigate('contact')">Contact Us</a>
+        </header>
+
+        <div class="side-panel">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdzboLBXOeeDG5AFZ9pDjTD0cmkX8zLAR7bA&usqp=CAU">
+                <h2>Flights Schedule</h2>
+                <p>View the schedule of flights.</p>
+                <a href="flights-schedule.html" class="navbutton">Go to Schedule</a>
+            </div>
+
+            <div class="card">
+                <img src="https://www.shutterstock.com/image-photo/passengers-commercial-airplane-flying-above-600nw-1573918030.jpg">
+
+                <h2>Flights Rate</h2>
+                <p>View rates of flights and avail discounts.</p>
+                <a href="flights-rate.html" class="navbutton">Go to Rates</a>
+            </div>
+
+            <div class="card">
+                <img src="https://www.aerospace-technology.com/wp-content/uploads/sites/15/2017/10/1l-Image-A380-800.jpg">
+                <h2>Book a Flight</h2>
+                <p>Book Flight for comfortable journey</p>
+                <a href="book-flight.html" class="navbutton">Book Now</a>
+            </div>
+
+           <div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStwp349cbCB3RfPngeNsAlDF6jM55--2y7BQ&usqp=CAU">
+    <h2>Cancel Reserved Seat</h2>
+    <p>Cancel your reserved seats.</p>
+    <a href="cancel-seat.html" class="navbutton">Cancel Now</a>
+</div>
+
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3xp552ZhPhd_LYTpvHoCvYxXcizRJrO8WxQ&usqp=CAU">
+                <h2>Submit Feedback</h2>
+                <p>Submit your feedback about our service.</p>
+                <a href="submit-feedback.html" class="navbutton">Submit Now</a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        &copy; 2024 SKYLINES All rights reserved.
+    </footer>
+
+
+    <script>
+        function navigate(page) {
+            // You can add logic here to navigate to the corresponding page
+            console.log('Navigating to ' + page);
+        }
+    </script>
+
+</body>
+</html>
