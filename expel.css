@@ -1,0 +1,127 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://th-thumbnailer.cdn-si-edu.com/CuUyANzT64sjHiOQUixgbXvt1qk=/fit-in/1072x0/filters:focal(960x640:961x641)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/a1/f3/a1f32a7a-1da5-4088-afc7-f2c0dda22aa3/plane-7013022_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e4875;
+    padding: 10px 20px;
+    border-bottom: 2px solid #4a74ac;
+    animation: fadeInDown 0.5s ease-in-out;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.navbutton {
+    text-decoration: none;
+    color: #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+
+.navbutton:hover {
+    background-color: #4a74ac;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold; /* Made "Expel Staff" bold */
+    color: #ccc; /* Changed color to match the button color */
+}
+
+button {
+    background-color: #4a74ac;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #336699; /* Darker shade of the button color on hover */
+}
+
+/* Animation keyframes */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjusted opacity for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ccc; /* Adjusted label color */
+}
+
+input[type="submit"] {
+    background-color: #4a74ac;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #336699; /* Darker shade of the button color on hover */
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    background-color: #1e4875; /* Changed input background color */
+    color: #fff; /* Changed input text color */
+    border: none;
+    border-radius: 5px;
+}
+
+/* Message display */
+#expelMessage {
+    text-align: center;
+    color: #fff;
+    background-color: #4a74ac;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
