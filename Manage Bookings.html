@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bookings</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/*background: linear-gradient(to right, #fad0c4, #d1d1e0);*/ 
+        }
+
+        .start {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        header {
+background-color: rgb(53, 53, 53);
+
+            padding-top: 15px;
+padding-bottom: 15px;
+            text-align: center;
+            width: 100%;
+            border-radius: 0px
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbutton {
+             background-color: rgb(53, 53, 53);
+            color: white;
+font-size: 15px;
+font-weight: bold;
+font-family: Arial;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+
+        .navbutton:hover {
+            background-color: rgb(41, 41, 41);
+            transform: scale(1.1);
+        }
+
+        .navbutton:active {
+            background-color: white;
+            color: darkblue;
+        }
+
+        .background-image {
+    width: 100%;
+    height: 450px;
+font-family: 'Times New Roman', Times, serif;
+    background-image: url('https://img.freepik.com/premium-photo/luxury-jet-interior-ai-modern-business-airline_154797-877.jpg');
+    background-size: cover;
+    background-position: center;
+display:flex;
+top-margin:170px;
+    /* Center content horizontally */
+    /* Center text within the container */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adding a text shadow for better visibility */
+}
+.imagetext1{
+font-size: 33px;
+font-weight: 700; 
+margin-top:140px;
+margin-left: 100px;
+    font-style: italic; /* Correcting the font-family property value */
+
+}
+.imagetext2{
+font-size: 53px;
+font-weight: 700; 
+margin-left: 130px;
+    font-style: italic; /* Correcting the font-family property value */
+text-align: left;
+}
+
+        .container {
+            /*width: 70%;
+            margin: auto;
+            overflow: hidden;
+            background: #fff;
+            padding: 15px;
+	padding-bottom:5px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);*/
+width: 70%;
+background-color: rgb(53, 53, 53);
+/*background-color: #336699;*/
+ margin: auto;
+margin-top: 30px;
+color:white;
+font-weight:700;
+				padding: 30px;
+				border-radius: 8px;
+				box-shadow: 0 0 10px rgba(244, 241, 241, 0.563);
+				text-align: center;
+				max-width: 750px;
+				width: 100%;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+width:200px;
+            padding: 12px;
+            background: darkblue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 22px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background: black;
+        transform: scale(1.05);
+        }
+ button:active {
+        transform: scale(0.95); /* Slightly decrease size on click */
+    }
+
+        #flights-list {
+            margin-top: 20px;
+        }
+
+        .flight {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+color: black;
+text-align:left;
+        }
+
+        .flight p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .flight strong {
+            font-weight: bold;
+        }
+
+        .book-now-button {
+            padding: 10px;
+            background: darkblue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .book-now-button:hover {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="start">
+        <header>
+            <a href="#" class="navbutton">Home</a>
+            <a href="#" class="navbutton" onclick="navigate('about')">About Us</a>
+            <a href="#" class="navbutton" onclick="navigate('contact')">Contact Us</a>
+        </header>
+    </div>
+    <div class="background-image">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/967px-Emirates_logo.svg.png "alt="" width="100" height="100">
+<div class="imagetext1">
+        <p style="line-height: 0">Stretch out in</p>
+<p style="font-size: 50px; font-style: normal; line-height: 0;">PREMIUM ECONOMY</p>
+<p style="line-height: 0">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspnow on selected routes.</p>
+
+</div>
+<div class="imagetext2">
+<p>Fly With Comfort</P>
+</div>
+    </div>
+    <div class="container">
+        <form id="flightForm">
+            <label for="departureAirport"><big>Departure Airport:</big></label>
+<select id="departureAirport" name="departureAirport">
+<option value="Lahore">Lahore</option>
+<option value="Islamabad">Islamabad</option>
+<option value="Karachi">Karachi</option>
+<option value="Quetta">Quetta</option>
+</select>
+
+            <label for="arrivalAirport"><big>Arrival Airport:</big></label>
+            <select id="arrivalAirport" name="arrivalAirport">
+<option value="New York">New York</option>
+<option value="London">London</option>
+<option value="Sydney">Sydney</option>
+<option value="Istanbul">Istanbul</option>
+</select>
+
+            <label for="departureDate"><big>Departure Date:</big></label>
+            <input type="date" id="departureDate" required>
+
+          <button type="button" onclick="searchFlights()">Search Flights</button>
+        </form>
+
+        <div id="flights-list"></div>
+    </div>
+
+    <script>
+        function searchFlights() {
+            const departureAirport = document.getElementById('departureAirport').value;
+            const arrivalAirport = document.getElementById('arrivalAirport').value;
+            const departureDate = document.getElementById('departureDate').value;
+
+            // Check if all required fields are filled
+            if (!departureAirport || !arrivalAirport || !departureDate) {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            const flights = [
+                { flightname: 'Emirates', flightID: '2397SNX', departureAirport: 'Lahore', arrivalAirport: 'New York', departureDate: '2024-02-08', time: '12:00 PM', price: '$750', seats: '45' },
+                { flightname: 'Serene Airline', flightID: '2597SPX', departureAirport: 'Islamabad', arrivalAirport: 'London', departureDate: '2024-02-12', time: '2:30 PM', price: '$950', seats: '35' },
+                // Add more flights as needed
+            ];
+
+            displayFlights(flights);
+        }
+
+        function displayFlights(flights) {
+            const flightsList = document.getElementById('flights-list');
+            flightsList.innerHTML = '';
+
+            if (flights.length === 0) {
+                flightsList.innerHTML = '<p>No flights found</p>';
+            } else {
+                flights.forEach(flight => {
+                    const flightElement = document.createElement('div');
+                    flightElement.classList.add('flight');
+                    flightElement.innerHTML = `
+                        <p><strong>Flight:</strong> ${flight.flightname}</p>
+                        <p><strong>Flight ID:</strong> ${flight.flightID}</p>
+                        <p><strong>Departure Airport:</strong> ${flight.departureAirport}</p>
+                        <p><strong>Arrival Airport:</strong> ${flight.arrivalAirport}</p>
+                        <p><strong>Departure Date:</strong> ${flight.departureDate}</p>
+                        <p><strong>Departure Time:</strong> ${flight.time}</p>
+                        <p><strong>Price:</strong> ${flight.price}</p>
+                        <p><strong>Available Seats:</strong> ${flight.seats}</p></br>
+<center>
+                        <button class="book-now-button" onclick="bookNow('${flight.flightID}')">Book Now</button>
+</center>
+                    `;
+                    flightsList.appendChild(flightElement);
+                });
+            }
+        }
+
+        function bookNow(flightID) {
+            // Implement booking logic here
+            alert(`Booking flight with ID: ${flightID}`);
+        }
+    </script>
+</body>
+</html>
