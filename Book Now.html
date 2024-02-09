@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <style>
+        body {
+            margin: 0;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ecf2ff; /* Light blue background */
+        }
+
+        .start {
+            display: flex;
+            flex-direction: column;
+            margin-left: 92px;
+            align-items: center;
+            width: 90%;
+        }
+
+        header {
+            background-color: #3498db;
+            padding: 15px;
+            text-align: center;
+            width: 80%;
+           border-radius:15px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbutton {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s, transform 0.3s;
+            text-decoration: none;
+        }
+        .navbutton:hover {
+            background-color: darkblue; /* Darker shade of blue on hover */
+        color: #fff; /* White text color on hover */
+        }
+
+        .navbutton:active {
+            background-color: #21618c;
+       /* Slightly decrease size on click */
+        }
+
+        .container {
+            width: 70%;
+ background: linear-gradient(to bottom, #c2e0ff, #ecf2ff);
+           /* background-color: #c2e0ff;*/ /* Lighter blue background */
+            margin: auto;
+            margin-top: 70px;
+            color: #333; /* Dark text color */
+            font-weight: 700;
+min-height: calc(120vh - 180px);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 750px;
+            width: 70%;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #2c3e50; /* Dark blue label text */
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #3498db; /* Border color matches header */
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 200px;
+            padding: 12px;
+            background: #3498db; /* Blue button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 22px;
+            transition: background-color 0.5s, color 0.5s, transform 0.3s;
+        }
+
+        button:hover {
+           background-color: #1c6fd6; /* Darker shade of blue on hover */
+        color: #fff; /* White text color on hover */
+        transform: scale(1.05);
+        }
+ button:active {
+        background-color: #21618c;
+        transform: scale(0.95); /* Slightly decrease size on click */
+    }
+        #flights-list {
+            margin-top: 20px;
+        }
+
+        .flight {
+            background: #c2e0ff; /* Lighter blue background for each flight */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            color: #2c3e50; /* Dark blue text color */
+            text-align: left;
+        }
+
+        .flight p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .flight strong {
+            font-weight: bold;
+        }
+
+        /* Updated style for the confirmed ticket message */
+        .confirmation-message {
+            text-align: center;
+            font-style: italic;
+            color: #3498db; /* Blue color for confirmation message */
+            margin-bottom: 20px;
+        }
+footer {
+        background-color: #3498db;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        border-radius: 10px;
+        position: fixed;
+        bottom: 0;
+        transition: background-color 0.5s;
+    }
+
+    /* Change footer background color on hover */
+    footer:hover {
+        background-color: #1c6fd6;
+    }
+    </style>
+</head>
+<body>
+   
+<div class="start">
+        <header>
+<header>
+<h1>BOOK NOW</h1>
+</header>
+            <a href="#" class="navbutton">Home</a>
+            <a href="#" class="navbutton" onclick="navigate('about')">About Us</a>
+            <a href="#" class="navbutton" onclick="navigate('contact')">Contact Us</a>
+        </header>
+</div>
+<div class="container">
+        <form id="flightForm">
+</br>
+            <label for="name"><big>Name:</big></label>
+<input type="text" id="name" required>
+
+            <label for="password"><big>Password:</big></label>
+<input type="password" id="password" required>
+            <label for="Account"><big>Card Number:</big></label>
+            <input type="password" id="Account" required>
+ <label for="expiry"><big>Card Expiry Date:</big></label>
+            <input type="date" id="expiry" required>
+<label for="pin"><big>CVV:</big></label>
+            <input type="password" id="pin" required minLength="3" maxLength="3">
+<center>
+          <button type="button" onclick="searchFlights()">Book Now</button></center>
+        </form>
+
+        <div id="flights-list"></div>
+    </div>
+ <footer>
+        &copy; 2024 SKYLINES All rights reserved.
+    </footer>
+    <script>
+        function searchFlights() {
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const Account = document.getElementById('Account').value;
+            const expiry = document.getElementById('expiry').value;
+            const pin = document.getElementById('pin').value;
+            // Check if all required fields are filled
+            if (!name || !password || !Account||!expiry||!pin) {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            const flights = [
+                { flightname: 'Emirates', flightID: '2397SNX', departureAirport: 'Lahore', arrivalAirport: 'New York', departureDate: '2024-02-08', time: '12:00 PM', price: '$750', seats: '45' },
+                // Add more flights as needed
+            ];
+
+            displayFlights(flights);
+        }
+
+        function displayFlights(flights) {
+            const flightsList = document.getElementById('flights-list');
+            flightsList.innerHTML = '';
+
+            if (flights.length === 0) {
+                flightsList.innerHTML = '<p>No flights found</p>';
+            } else {
+                flights.forEach(flight => {
+                    const flightElement = document.createElement('div');
+                    flightElement.classList.add('flight');
+                    flightElement.innerHTML = `
+<center>
+<div class="confirmation-message">
+		<p style="font-size:36px;">Ticket Confirmed</p></div>
+</center>
+                        <p><strong>Flight:</strong> ${flight.flightname}</p>
+                        <p><strong>Flight ID:</strong> ${flight.flightID}</p>
+	<p><strong>Seat No:</strong> ${flight.seats}</p>
+                        <p><strong>Departure Airport:</strong> ${flight.departureAirport}</p>
+                        <p><strong>Arrival Airport:</strong> ${flight.arrivalAirport}</p>
+                        <p><strong>Departure Date:</strong> ${flight.departureDate}</p>
+                        <p><strong>Departure Time:</strong> ${flight.time}</p>
+                        <p><strong>Price:</strong> ${flight.price}</p>
+`;
+                    flightsList.appendChild(flightElement);
+                });
+            }
+        }
+
+        function bookNow(flightID) {
+            // Implement booking logic here
+            alert(`Booking flight with ID: ${flightID}`);
+        }
+    </script>
+</body>
+</html>
