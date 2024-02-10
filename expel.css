@@ -2,8 +2,10 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://th-thumbnailer.cdn-si-edu.com/CuUyANzT64sjHiOQUixgbXvt1qk=/fit-in/1072x0/filters:focal(960x640:961x641)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/a1/f3/a1f32a7a-1da5-4088-afc7-f2c0dda22aa3/plane-7013022_1920.jpg');
-    background-size: cover;
+    /* background-image: url('https://th-thumbnailer.cdn-si-edu.com/CuUyANzT64sjHiOQUixgbXvt1qk=/fit-in/1072x0/filters:focal(960x640:961x641)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/a1/f3/a1f32a7a-1da5-4088-afc7-f2c0dda22aa3/plane-7013022_1920.jpg');
+    */
+    background-image: url('https://calaero.edu/wp-content/uploads/2018/05/Airplane-Transponder.jpg');
+    background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
@@ -13,7 +15,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1e4875;
+    background-color: #7b8fa5;;
     padding: 10px 20px;
     border-bottom: 2px solid #4a74ac;
     animation: fadeInDown 0.5s ease-in-out;
