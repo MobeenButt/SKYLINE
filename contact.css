@@ -1,0 +1,359 @@
+/* navbar styling */
+:root {
+  --primary: #4a74ac;
+  --secondary: #0828dd;
+  --light: #f5f5f5;
+  --dark: #353538;
+  /* --header--height: 3.5rem;
+  
+    --body--font: "Montserrat", sans-serif;
+    --normal-font-size: 1.038rem;
+    --font-regular: 400;
+    --font-semi-bold: 700;
+    --z-tooltip: 10;
+    --z-fixed: 100; */
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+/*navbar start  */
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  align-items: start !important;
+  background-color: var(--secondary);
+  justify-content: space-between;
+  color: var(--light);
+  width: 92%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/* .background
+  {
+              z-index: 0;
+              top: 0;
+              background-clip: url(flyingplane.mp4);
+              background-size: cover;
+              position: absolute;
+              filter: brightness(30%);
+              background-position: left;
+              display: flex;
+  
+  }
+  .contact{
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-style: italic;
+      color: #3ac4f2;
+      text-shadow: 1px 1px 5px #e22b90;
+      font-size: 60px;
+      height: 500px;
+  }
+  */
+/* .container {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    background-clip: url(flyingplane.mp4);
+    background-attachment: fixed;
+    background-position: left;
+    padding: 100px 20%;
+    z-index: 2;
+  } */
+
+.features {
+  margin-top: 600px;
+  padding: 200px 0;
+  text-align: center;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  height: fit-content;
+  flex-direction: column;
+  padding-top: 50px;
+  background: #080014;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin: 30px;
+  text-align: center;
+
+  .feature {
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature1,
+  .feature2,
+  .feature3 {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+    font-size: large;
+    text-align: center;
+  }
+}
+.subcontain {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: brightness(30%);
+  z-index: -1;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-style: italic;
+  color: #3ac4f2;
+  text-shadow: 1px 1px 5px #e22b90;
+  font-size: 30px;
+  padding: 20px 0px;
+}
+.contact {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-style: italic;
+  color: #3ac4f2;
+  text-shadow: 1px 1px 5px #e22b90;
+  font-size: 60px;
+  height: 500px;
+  background-image: url(clouds.jpg);
+}
+*/ body {
+  font-family: Arial, sans-serif;
+}
+
+.features {
+  margin-top: 600px;
+  padding: 200px 0;
+  text-align: center;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  height: fit-content;
+  flex-direction: column;
+  padding-top: 50px;
+
+  background: #080014;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin: 30px;
+  /* text-align: center; */
+
+  .feature {
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature1,
+  .feature2,
+  .feature3 {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+    font-size: large;
+    text-align: center;
+  }
+}
+
+input[type="text"],
+select,
+textarea {
+  display: flex;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+.button {
+  width: fit-content;
+  padding: 7px 15px;
+  font-size: large;
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(to bottom right, #1b0932, #3ac4f2, #7a55c2);
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom right, #7a55c2, #3ac4f2, #1b0932);
+  cursor: pointer;
+}
+.containerh {
+  overflow: hidden;
+  color: white;
+  background-image: url("clouds.jpg");
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* width: 100vw !important; */
+  height: 100%;
+  background-position: center;
+}
+
+/* .subcontain{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      backdrop-filter: brightness(30%);
+      z-index: -1;
+  } */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 100%; */
+  font-style: italic;
+  color: #3ac4f2;
+  text-shadow: 1px 1px 5px #e22b90;
+  font-size: 30px;
+  /* padding: 20px 0px; */
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+.contact {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  font-style: italic;
+  color: #3ac4f2;
+  text-shadow: 1px 1px 5px #e22b90;
+  font-size: 60px;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+  background-image: url("clouds.jpg");
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* width: 100vw !important; */
+  height: 100%;
+  background-position: center;
+}
+.background {
+  z-index: 0;
+  top: 0;
+  width: 100%;
+  height: 700px;
+  background-image: url("peakpx(2).jpg");
+  background-size: cover;
+  position: absolute;
+  filter: brightness(30%);
+  background-position: left;
+
+  display: flex;
+}
