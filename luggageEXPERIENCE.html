@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="experience.css">
+    <!-- favicon
+    <link rel="shortcut icon" href="#titleicon" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+/*
+    bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!--icons link-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
+"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!--fonts link-->
+
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="main.js" />
+  </head>
+  <body>
+    <!-- nav bar dropdown  -->
+    <div class="px-5 col-12">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img class="logo1" src="images/logo.png" alt="logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+              <!-- Product Dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="productDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Product
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productDropdown">
+                  <li><a class="dropdown-item" href="#">Overview</a></li>
+                  <li><a class="dropdown-item" href="#">Use Cases</a></li>
+                  <li><a class="dropdown-item" href="#">Calculate ROI</a></li>
+                </ul>
+              </li>
+
+              <!-- Developers Dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="developersDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Developers
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="developersDropdown">
+                  <li><a class="dropdown-item" href="#">Overview</a></li>
+                  <li><a class="dropdown-item" href="#">Documentation</a></li>
+                  <li><a class="dropdown-item" href="#">Support</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Security & Compliance</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Pricing Button -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+
+              <!-- Company Dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="companyDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Company
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="companyDropdown">
+                  <li><a class="dropdown-item" href="#">Our Expertise</a></li>
+                  <li><a class="dropdown-item" href="#">Careers</a></li>
+                  <li><a class="dropdown-item" href="#">Blog</a></li>
+                  <li><a class="dropdown-item" href="#">Contact</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Client Spotlight</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Newsroom</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <!--  two buttons on the right side -->
+            <div class="d-flex">
+              <button class="btn btn-primary me-2" onclick="openForm()">
+                Login In
+              </button>
+
+              <div class="form-popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                  <h1 class="text-secondary">Login</h1>
+
+                  <label for="email"><b class="text-secondary">Email</b></label>
+                  <input
+                    type="text"
+                    placeholder="example@gmail.com"
+                    name="email"
+                    required
+                  />
+
+                  <label for="psw"
+                    ><b class="text-secondary">Password</b></label
+                  >
+                  <input
+                    type="password"
+                    placeholder="****"
+                    name="psw"
+                    required
+                  />
+
+                  <button type="submit" class="btn">Login</button>
+                  <button
+                    type="button"
+                    class="btn cancel"
+                    onclick="closeForm()"
+                  >
+                    Close
+                  </button>
+                </form>
+              </div>
+ 
+              <script>
+                function openForm() {
+                  document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                  document.getElementById("myForm").style.display = "none";
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </nav> */
+       <div class="background"></div>
+    <div class="contact">YOUR LUGGAGE EXPERIENCE</div>
+          <div id="productsTable">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h1>FIRST CLASS</h1>
+          <table border="2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Seat Number</th>
+            <th>Passenger Name</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>23A</td>
+            <td>John Doe</td>
+            <td>New York</td>
+            <td>12:00 PM</td>
+            <td>3:00 PM</td>
+            <td>Confirmed</td>
+        </tr>
+        <tr>
+            <td>15F</td>
+            <td>Jane Smith</td>
+            <td>Los Angeles</td>
+            <td>10:30 AM</td>
+            <td>1:30 PM</td>
+            <td>Confirmed</td>
+        </tr>
+        <tr>
+            <td>32C</td>
+            <td>Michael Johnson</td>
+            <td>Chicago</td>
+            <td>9:00 AM</td>
+            <td>12:00 PM</td>
+            <td>Pending</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+ <h1>ECONOMY CLASS</h1>
+          <table border="2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Seat Number</th>
+            <th>Passenger Name</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>23A</td>
+            <td>John Doe</td>
+            <td>New York</td>
+            <td>12:00 PM</td>
+            <td>3:00 PM</td>
+            <td>Confirmed</td>
+        </tr>
+        <tr>
+            <td>15F</td>
+            <td>Jane Smith</td>
+            <td>Los Angeles</td>
+            <td>10:30 AM</td>
+            <td>1:30 PM</td>
+            <td>Confirmed</td>
+        </tr>
+        <tr>
+            <td>32C</td>
+            <td>Michael Johnson</td>
+            <td>Chicago</td>
+            <td>9:00 AM</td>
+            <td>12:00 PM</td>
+            <td>Pending</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table> <h1>BUISNESS CLASS</h1>
+          <table border="2" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Seat Number</th>
+            <th>Passenger Name</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>23A</td>
+            <td>John Doe</td>
+            <td>New York</td>
+            <td>12:00 PM</td>
+            <td>3:00 PM</td>
+            <td>Confirmed</td>
+        </tr>
+        <tr>
+            <td>15F</td>
+            <td>Jane Smith</td>
+            <td>Los Angeles</td>
+            <td>10:30 AM</td>
+            <td>1:30 PM</td>
+            <td>Confirmed</td>
+        </tr>
+        <tr>
+            <td>32C</td>
+            <td>Michael Johnson</td>
+            <td>Chicago</td>
+            <td>9:00 AM</td>
+            <td>12:00 PM</td>
+            <td>Pending</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+       
+
+    </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script href="main.js"></script>
+  </body>
+</html>
