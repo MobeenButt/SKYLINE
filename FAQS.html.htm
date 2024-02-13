@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airline FAQs</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      font-family: fantasy;
+      background-color:darkslateblue;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1, h3 {
+      color:darkgray;
+    }
+    .faq-section, .comment-section, .all-comments {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .accordion {
+      margin-bottom: 0;
+    }
+    .btn-link {
+      color: greenyellow;
+      text-decoration: none;
+    }
+    .btn-link:hover {
+      text-decoration: underline;
+    }
+    .accordion .card-header {
+      cursor: pointer;
+      position: relative;
+    }
+    .accordion .card-header::after {
+      content: '\f054'; /* Font Awesome Unicode character for right arrow */
+      font-family: 'FontAwesome';
+      font-size: 18px;
+      color: brown;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .accordion .card-header.collapsed::after {
+      transform: rotate(90deg) translateY(-50%);
+    }
+    .comment-section form {
+      margin-top: 20px;
+    }
+    #commentList {
+      list-style: none;
+      padding: 0;
+    }
+    #commentList li {
+      background-color: rgba(240, 240, 240, 0.9);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      position: relative;
+    }
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: green;
+      color: whitesmoke;
+      position: absolute;
+text-align:center;
+      top: 15%;
+      left: 7px;
+      transform: translateY(-55%);
+      overflow: hidden;
+    }
+    .avatar i {
+      font-size: 18px;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+    }
+    .comment-details {
+      margin-left: 50px;
+      word-wrap: break-word;
+    }
+    .feedback-form {
+      margin-top: 10px;
+    }
+    .feedback-thankyou {
+      display: none;
+      color: green;
+      margin-top: 10px;
+    }
+.card-body {
+  background-color:green;
+color:ghostwhite;
+}
+.card {
+  background-color:darkgray;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="mt-4 mb-4 text-center">Airline FAQs</h1>
+
+    <!-- FAQ Section with Accordion -->
+    <div class="faq-section">
+      <h3 class="mb-4">Frequently Asked Questions</h3>
+      <div id="faqAccordion">
+        <!-- FAQ items using Bootstrap accordion -->
+        <div class="card">
+          <div class="card-header" id="faqHeading1" data-toggle="collapse" data-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+            <h5 class="mb-0">
+              Question 1: What is the baggage allowance?
+            </h5>
+          </div>
+          <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
+            <div class="card-body">
+             The baggage allowance varies depending on the class of your ticket. Please check our website for detailed information.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading2" data-toggle="collapse" data-target="#faqCollapse2" aria-expanded="true" aria-controls="faqCollapse2">
+            <h5 class="mb-0">
+              Question 2: How can I book a ticket online?
+            </h5>
+          </div>
+          <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
+            <div class="card-body">
+             You can easily book a ticket through our website. Visit the booking page, select your destination, and follow the instructions to complete the booking process.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading3" data-toggle="collapse" data-target="#faqCollapse3" aria-expanded="true" aria-controls="faqCollapse3">
+            <h5 class="mb-0">
+              Question 3: What in-flight services are available?
+            </h5>
+          </div>
+          <div id="faqCollapse3" class="collapse" aria-labelledby="faqHeading3" data-parent="#faqAccordion">
+            <div class="card-body">
+               Our in-flight services include meals, entertainment, and comfortable seating. Premium classes may offer additional amenities.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading4" data-toggle="collapse" data-target="#faqCollapse4" aria-expanded="true" aria-controls="faqCollapse4">
+            <h5 class="mb-0">
+              Question 4: Can I bring my pet on board?
+            </h5>
+          </div>
+          <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading4" data-parent="#faqAccordion">
+            <div class="card-body">
+               Yes, we allow pets on board. Please review our pet policy for specific guidelines and requirements.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading5" data-toggle="collapse" data-target="#faqCollapse5" aria-expanded="true" aria-controls="faqCollapse5">
+            <h5 class="mb-0">
+              Question 5: How can I change my flight reservation?
+            </h5>
+          </div>
+          <div id="faqCollapse5" class="collapse" aria-labelledby="faqHeading5" data-parent="#faqAccordion">
+            <div class="card-body">
+              To change your flight reservation, log in to your account on our website and navigate to the "Manage Booking" section. Follow the prompts to make the desired changes.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading6" data-toggle="collapse" data-target="#faqCollapse6" aria-expanded="true" aria-controls="faqCollapse6">
+            <h5 class="mb-0">
+            Are there any travel restrictions due to COVID-19?
+            </h5>
+          </div>
+          <div id="faqCollapse6" class="collapse" aria-labelledby="faqHeading6" data-parent="#faqAccordion">
+            <div class="card-body">
+              Yes, there may be travel restrictions in place. Check our website or contact our customer service for the latest information on COVID-19 travel guidelines.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading7" data-toggle="collapse" data-target="#faqCollapse7" aria-expanded="true" aria-controls="faqCollapse7">
+            <h5 class="mb-0">
+              Question 7: How can I request a refund for my ticket?
+            </h5>
+          </div>
+          <div id="faqCollapse7" class="collapse" aria-labelledby="faqHeading7" data-parent="#faqAccordion">
+            <div class="card-body">
+              Refund requests can be submitted through our website or by contacting our customer service. Please review our refund policy for eligibility criteria.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading8" data-toggle="collapse" data-target="#faqCollapse8" aria-expanded="true" aria-controls="faqCollapse8">
+            <h5 class="mb-0">
+              Question 8: What types of payment do you accept?
+            </h5>
+          </div>
+          <div id="faqCollapse8" class="collapse" aria-labelledby="faqHeading8" data-parent="#faqAccordion">
+            <div class="card-body">
+              We accept various payment methods, including credit cards, debit cards, and online payment systems. Check our booking page for the full list of accepted payment options.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading9" data-toggle="collapse" data-target="#faqCollapse9" aria-expanded="true" aria-controls="faqCollapse9">
+            <h5 class="mb-0">
+              Can I choose my seat when booking a ticket?
+            </h5>
+          </div>
+          <div id="faqCollapse9" class="collapse" aria-labelledby="faqHeading9" data-parent="#faqAccordion">
+            <div class="card-body">
+              Yes, you can choose your seat during the booking process. Seat selection options may vary based on the ticket type and availability.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqHeading10" data-toggle="collapse" data-target="#faqCollapse10" aria-expanded="true" aria-controls="faqCollapse10">
+            <h5 class="mb-0">
+              Question 10: Are there any discounts for children or senior citizens?
+            </h5>
+          </div>
+          <div id="faqCollapse10" class="collapse" aria-labelledby="faqHeading10" data-parent="#faqAccordion">
+            <div class="card-body">
+               Yes, we offer discounts for children and senior citizens. Check our promotions or contact our customer service for information on available discounts.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Comment Input Section -->
+    <div class="comment-section">
+      <h3 class="mb-4">Comments</h3>
+      <form id="commentForm">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="comment">Leave a Comment:</label>
+          <textarea class="form-control" id="comment" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit Comment</button>
+      </form>
+    </div>
+
+    <!-- Display All Comments Section -->
+    <div class="all-comments">
+      <h3 class="mb-4">All Comments</h3>
+      <ul id="commentList">
+        <!-- Example Comment -->
+        <li>
+          <div class="avatar"><i class="fas fa-user"></i></div>
+          <div class="comment-details">
+            <p><strong>John Doe</strong></p>
+            <p>This is a sample comment. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="feedback-form">
+              <label>Is this comment helpful?</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="feedbackRadio" id="helpfulRadio" value="helpful">
+                <label class="form-check-label" for="helpfulRadio">Yes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="feedbackRadio" id="notHelpfulRadio" value="notHelpful">
+                <label class="form-check-label" for="notHelpfulRadio">No</label>
+              </div>
+              <div class="feedback-thankyou" id="feedbackThankYou">Thank you for your feedback!</div>
+            </div>
+          </div>
+        </li>
+        <!-- Add more comments as needed -->
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS and Popper.js scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
+  <script>
+    // JavaScript to handle comment submission and feedback
+    document.getElementById('commentForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value;
+      var comment = document.getElementById('comment').value;
+      if (email.trim() !== "" && comment.trim() !== "") {
+        var commentList = document.getElementById('commentList');
+        var li = document.createElement('li');
+        li.innerHTML = '<div class="avatar"><i class="fas fa-user"></i></div><div class="comment-details"><p><strong>' + email + '</strong></p><p>' + comment + '</p><div class="feedback-form"><label>Is this comment helpful?</label><div class="form-check"><input class="form-check-input" type="radio" name="feedbackRadio" id="helpfulRadio" value="helpful"><label class="form-check-label" for="helpfulRadio">Yes</label></div><div class="form-check"><input class="form-check-input" type="radio" name="feedbackRadio" id="notHelpfulRadio" value="notHelpful"><label class="form-check-label" for="notHelpfulRadio">No</label></div><div class="feedback-thankyou" id="feedbackThankYou">Thank you for your feedback!</div></div></div>';
+        li.className = 'mb-2';
+        commentList.appendChild(li);
+        document.getElementById('commentForm').reset();
+      }
+    });
+
+    // JavaScript to handle feedback
+    var feedbackRadios = document.getElementsByName('feedbackRadio');
+    feedbackRadios.forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        var feedbackForm = this.closest('.feedback-form');
+        feedbackForm.style.display = 'none';
+        var feedbackThankYou = feedbackForm.querySelector('.feedback-thankyou');
+        feedbackThankYou.style.display = 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
