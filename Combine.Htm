@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Management System</title>
+  <style>
+   body {
+
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+    
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f3f5f7;
+      font-size: 2em;
+      margin-bottom: 20px;
+ 
+    }
+    #staffForm, #updateForm, #assignForm, #removeForm {
+      background-color: #fff0;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(237, 237, 238, 0.1);
+      margin-bottom: 30px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #4615f5;
+    }
+
+    input, select {
+      width: calc(100% - 20px);
+      padding: 12px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #c7b9ff26;
+       color: #150940;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease-in-out;
+      margin-right: 10px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    button:hover {
+  background-color: white;
+  color: #0056b3;
+  
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  max-width: 800px;
+  margin: 0 auto; /* Center the table horizontally */
+  overflow: hidden;
+}
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
+      cursor: pointer;
+      margin-left: 50px;
+      position: relative;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      margin-left: 50px;
+    }
+    .b1{
+        background-color: darkolivegreen;
+        color: white;
+    }
+    .b1:hover{
+        background-color: whitesmoke;
+        color: darkolivegreen;
+    }
+
+    td {
+      background-color: #f9f9f9;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    td:hover {
+      background-color: #e0e0e0;
+    }
+
+    #updateButton, #assignButton, #removeButton {
+      margin-top: 30px;
+    }
+
+    #updateForm, #assignForm, #removeForm {
+      display: none;
+      margin-top: 30px;
+    }
+
+    #updateForm h2, #assignForm h2, #removeForm h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color:#4615f5;
+    }
+    
+
+    #updateForm button, #assignForm button, #removeForm button {
+      background-color:#4615f5;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease-in-out;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #updateForm button:hover, #assignForm button:hover, #removeForm button:hover {
+      background-color: #0056b3;
+    }
+
+    #pilotDetails, #otherDetails {
+      display: none;
+    }
+
+   
+
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  th, td {
+    white-space: normal;
+    min-width: auto;
+    box-sizing: border-box;
+  }
+
+  #staffTable th, #staffTable td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+} 
+  </style>
+</head>
+<body style="background-image: url('https://wallpapersmug.com/download/1366x768/a6844b/airplane-sky-clouds.jpg');">
+
+  
+  <h1>Staff Management System</h1>
+
+  <button style="margin-left: 25%;" class="bt" onclick="showStaffForm()">Add Staff</button>
+  <button class="bt" id="updateButton" onclick="showUpdateForm()">Update Staff</button>
+  <button class="bt" id="assignButton" onclick="showAssignForm()">Assign Duties</button>
+  <button class="bt" id="removeButton" onclick="showRemoveForm()">Remove Staff</button>
+  <br><br>
+
+  
+  <form id="staffForm">
+    <label for="staffName">Enter Staff Name:</label>
+    <input type="text" id="staffName" name="staffName">
+    <label for="flightId">Enter Flight ID:</label>
+    <input type="text" id="flightId" name="flightId">
+    <label for="salary">Enter Salary:</label>
+    <input type="text" id="salary" name="salary">
+    <button class="b1" type="button" onclick="addStaff()">Add Staff</button>
+  </form>
+
+  <form id="updateForm">
+    <h2>Update Staff Details</h2>
+    <label for="assignStaffId">Enter Staff ID:</label>
+    <input type="text" id="assignStaffId" name="assignStaffId">
+    <label for="updateStaffName">Update Staff Name:</label>
+    <input type="text" id="updateStaffName" name="updateStaffName">
+    <label for="updateFlightId">Update Flight ID:</label>
+    <input type="text" id="updateFlightId" name="updateFlightId">
+    <label for="updateSalary">Update Salary:</label>
+    <input type="text" id="updateSalary" name="updateSalary">
+    <button class="b1" type="button" onclick="updateStaffDetails()">Update Staff</button>
+  </form>
+
+  <form id="assignForm">
+    <h2>Assign Duties</h2>
+    <label for="assignStaffId">Enter Staff ID:</label>
+<input type="text" id="assignStaffIdInput" name="assignStaffId">
+
+    <label for="assignRole">Select Role:</label>
+    <select id="assignRole" name="assignRole" onchange="toggleDetails()">
+      <option value="pilot">Pilot</option>
+      <option value="other">Other Duties</option>
+    </select>
+    <div id="pilotDetails">
+      <label for="planeDetails">Enter Plane Details:</label>
+      <input type="text" id="planeDetails" name="planeDetails">
+      <label for="departureTime">Enter Departure Time:</label>
+      <input type="text" id="departureTime" name="departureTime">
+    </div>
+    <div id="otherDetails">
+      <label for="otherDuties">Enter Other Duties:</label>
+      <input type="text" id="otherDuties" name="otherDuties">
+    </div>
+    <button class="b1" type="button" onclick="assignDuties()">Assign Duties</button>
+  </form>
+
+  <form id="removeForm">
+    <h2>Remove Staff</h2>
+    <label for="removeStaffId">Enter Staff ID:</label>
+    <input type="text" id="removeStaffId" name="removeStaffId">
+    <button class="b1" type="button" onclick="removeStaff()">Remove Staff</button>
+  </form>
+
+  <table id="staffTable">
+    <!-- Staff data will be dynamically populated here -->
+  </table>
+  </div>
+  <script>
+    let staffData = JSON.parse(localStorage.getItem('staffData')) || [];
+
+    function saveStaffData() {
+      localStorage.setItem('staffData', JSON.stringify(staffData));
+    }
+
+    function addStaff() {
+      const staffName = document.getElementById('staffName').value;
+      const flightId = document.getElementById('flightId').value;
+      const salary = document.getElementById('salary').value;
+
+      const newStaff = {
+        id: staffData.length + 1,
+        name: staffName,
+        flightId: flightId,
+        salary: salary,
+        role: '',
+        details: '',
+      };
+
+      staffData.push(newStaff);
+      saveStaffData();
+      document.getElementById('staffForm').reset();
+      displayStaffTable(staffData);
+      alert('Staff added successfully!');
+    }
+
+    function updateStaffDetails() {
+      const staffId = document.getElementById('assignStaffId').value;
+      const updatedName = document.getElementById('updateStaffName').value;
+      const updatedFlightId = document.getElementById('updateFlightId').value;
+      const updatedSalary = document.getElementById('updateSalary').value;
+
+      const index = staffData.findIndex(staff => staff.id == staffId);
+
+      if (index !== -1) {
+        staffData[index].name = updatedName;
+        staffData[index].flightId = updatedFlightId;
+        staffData[index].salary = updatedSalary;
+
+        saveStaffData();
+        document.getElementById('updateForm').style.display = 'none';
+        displayStaffTable(staffData);
+        alert('Staff details updated successfully!');
+      } else {
+        alert('Staff not found for the entered ID');
+      }
+    }
+
+    function showStaffForm() {
+      document.getElementById('staffForm').style.display = 'block';
+      document.getElementById('updateForm').style.display = 'none';
+      document.getElementById('assignForm').style.display = 'none';
+      document.getElementById('removeForm').style.display = 'none';
+    }
+
+    function showUpdateForm() {
+      document.getElementById('updateForm').style.display = 'block';
+      document.getElementById('staffForm').style.display = 'none';
+      document.getElementById('assignForm').style.display = 'none';
+      document.getElementById('removeForm').style.display = 'none';
+    }
+
+    function showAssignForm() {
+      document.getElementById('assignForm').style.display = 'block';
+      document.getElementById('staffForm').style.display = 'none';
+      document.getElementById('updateForm').style.display = 'none';
+      document.getElementById('removeForm').style.display = 'none';
+    }
+
+    function showRemoveForm() {
+      document.getElementById('removeForm').style.display = 'block';
+      document.getElementById('staffForm').style.display = 'none';
+      document.getElementById('updateForm').style.display = 'none';
+      document.getElementById('assignForm').style.display = 'none';
+    }
+
+    function removeStaff() {
+      const staffId = document.getElementById('removeStaffId').value;
+
+      const index = staffData.findIndex(staff => staff.id == staffId);
+
+      if (index !== -1) {
+        staffData.splice(index, 1);
+        saveStaffData();
+        document.getElementById('removeForm').reset();
+        displayStaffTable(staffData);
+        alert('Staff removed successfully!');
+      } else {
+        alert('Staff not found for the entered ID');
+      }
+    }
+
+    function assignDuties() {
+      const staffId = document.getElementById('assignStaffIdInput').value; // Corrected ID reference
+      const role = document.getElementById('assignRole').value;
+    
+      const index = staffData.findIndex(staff => staff.id == staffId);
+    
+      if (index !== -1) {
+        if (role === 'pilot') {
+          const planeDetails = document.getElementById('planeDetails').value;
+          const departureTime = document.getElementById('departureTime').value;
+          staffData[index].role = 'pilot';
+          staffData[index].details = `Plane: ${planeDetails}, Departure Time: ${departureTime}`; // Corrected string concatenation
+    
+        } else {
+          const otherDuties = document.getElementById('otherDuties').value;
+          staffData[index].role = 'other';
+          staffData[index].details = otherDuties;
+        }
+    
+        saveStaffData();
+        document.getElementById('assignForm').reset();
+        displayStaffTable(staffData);
+        alert('Duties assigned successfully!');
+      } else {
+        alert('Staff not found for the entered ID');
+      }
+    }
+     
+    function toggleDetails() {
+      const role = document.getElementById('assignRole').value;
+      const pilotDetails = document.getElementById('pilotDetails');
+      const otherDetails = document.getElementById('otherDetails');
+
+      if (role === 'pilot') {
+        pilotDetails.style.display = 'block';
+        otherDetails.style.display = 'none';
+      } else {
+        pilotDetails.style.display = 'none';
+        otherDetails.style.display = 'block';
+      }
+    }
+
+    function displayStaffTable(staffData) {
+      const table = document.getElementById('staffTable');
+      table.innerHTML = '';
+
+      const headerRow = table.insertRow(0);
+      const headers = ['ID', 'Name', 'Flight ID', 'Salary', 'Role', 'Details', 'Actions'];
+
+      headers.forEach((header, index) => {
+        const th = document.createElement('th');
+        th.innerHTML = header;
+        headerRow.appendChild(th);
+      });
+
+      staffData.forEach((staff, index) => {
+        const row = table.insertRow(-1);
+        Object.values(staff).forEach((value) => {
+          const cell = row.insertCell(-1);
+          cell.innerHTML = value;
+        });
+
+        const actionsCell = row.insertCell(-1);
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.onclick = function() {
+          removeStaffRow(index);
+        };
+        actionsCell.appendChild(removeButton);
+      });
+    }
+
+    function removeStaffRow(index) {
+      staffData.splice(index, 1);
+      saveStaffData();
+      displayStaffTable(staffData);
+      alert('Staff removed successfully!');
+    }
+
+    // Initial display
+    displayStaffTable(staffData);
+  </script>
+
+</body>
+</html>
